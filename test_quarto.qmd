@@ -1,0 +1,28 @@
+---
+title: "My First Quarto Doc"
+format: html
+editor: visual
+---
+
+## Hello Quarto
+
+This is a test document.
+
+```{r}
+install.packages('skimr')
+install.packages('tidyverse')
+install.packages('magrittr')
+install.packages('ggplot2')
+install.packages('heatmaply')
+library(skimr)
+library(tidyverse)
+library(magrittr)
+library(ggplot2)
+library(heatmaply)
+skim(mtcars)
+
+mtcars$hp %>% hist()
+
+mtcars %>% ggplot()+aes(x=hp,y=gear)+geom_point()
+mtcars %>% heatmaply(scale='column')
+```
