@@ -4,21 +4,24 @@ format: html
 editor: visual
 ---
 
-## Hello Quarto
-
-This is a test document.
-
-```{r}
+```{r, include=FALSE}
 install.packages('skimr')
 install.packages('tidyverse')
 install.packages('magrittr')
 install.packages('ggplot2')
 install.packages('heatmaply')
+```
+```{r install libraries}
 library(skimr)
 library(tidyverse)
 library(magrittr)
 library(ggplot2)
 library(heatmaply)
+
+```
+
+
+```{r run some code}
 skim(mtcars)
 
 mtcars$hp %>% hist()
